@@ -1,0 +1,126 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a2e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator {
+  background: #16213e;
+  border-radius: 24px;
+  padding: 24px;
+  width: 320px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* Display */
+.display {
+  background: #0f3460;
+  border-radius: 16px;
+  padding: 20px 20px 16px;
+  margin-bottom: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.expression {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  min-height: 20px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.result {
+  font-size: 40px;
+  font-weight: 300;
+  color: #e2e8f0;
+  word-break: break-all;
+  text-align: right;
+  line-height: 1.1;
+  transition: font-size 0.15s ease;
+}
+
+.result.small {
+  font-size: 28px;
+}
+
+/* Button grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 500;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.1s ease, box-shadow 0.1s ease;
+  outline: none;
+  color: #e2e8f0;
+  background: #1e2d4a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  user-select: none;
+}
+
+.btn:hover {
+  background: #263d5e;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+.btn:active {
+  transform: scale(0.93);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.btn-operator {
+  background: #1b3a5c;
+  color: #63b3ed;
+  font-size: 22px;
+}
+
+.btn-operator:hover {
+  background: #1e4976;
+}
+
+.btn-clear {
+  background: #2d1b3d;
+  color: #fc8181;
+}
+
+.btn-clear:hover {
+  background: #3d2455;
+}
+
+.btn-equals {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-equals:hover {
+  background: linear-gradient(135deg, #7b93f0 0%, #8b5cb8 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.55);
+}
+
+.span-two {
+  grid-column: span 2;
+}
